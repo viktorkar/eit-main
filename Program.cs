@@ -1,3 +1,5 @@
+using eit_main.Backend.service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.Add(new ServiceDescriptor(typeof(DataService), new DataService()));
 
 var app = builder.Build();
 
